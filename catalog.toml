@@ -1,0 +1,10 @@
+[[plugin]]
+id = "spinualexandru/codex-usage"
+name = "Codex Usage"
+version = "0.1.0"
+author = "spinualexandru"
+license = "MIT"
+icon = "sparkles"
+description = "Track Codex 5-hour and weekly quota usage from the bar."
+min_noctalia = "5.0.0"
+tags = ["productivity", "utility"]
