@@ -1,0 +1,40 @@
+id = "spinualexandru/codex-usage"
+name = "Codex Usage"
+version = "0.1.0"
+min_noctalia = "5.0.0"
+author = "spinualexandru"
+license = "MIT"
+dependencies = []
+tags = ["productivity", "utility"]
+icon = "sparkles"
+description = "Track Codex 5-hour and weekly quota usage from the bar."
+
+[[setting]]
+key = "show_five_hour_bar"
+type = "bool"
+label_key = "settings.show_five_hour_bar.label"
+description_key = "settings.show_five_hour_bar.description"
+default = true
+
+[[setting]]
+key = "show_five_hour_panel"
+type = "bool"
+label_key = "settings.show_five_hour_panel.label"
+description_key = "settings.show_five_hour_panel.description"
+default = true
+
+[[widget]]
+id = "usage"
+entry = "widget.luau"
+
+[[panel]]
+id = "details"
+entry = "panel.luau"
+width = 420
+height = 360
+placement = "attached"
+position = "auto"
+
+[[service]]
+id = "poller"
+entry = "service.luau"

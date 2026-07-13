@@ -1,0 +1,43 @@
+{
+  "title": "Codex Usage",
+  "description": "Track Codex 5-hour and weekly quota usage from the bar.",
+  "labels": {
+    "five_hour": "5-hour limit",
+    "weekly": "Weekly limit",
+    "status": "Status",
+    "plan": "{plan} plan",
+    "unknown_plan": "Unknown",
+    "unavailable": "Usage unavailable",
+    "percent_used": "{percent}% used",
+    "usage_and_reset": "{percent} used · resets in {time}",
+    "resets_in": "Resets in {time}",
+    "reset_unknown": "unknown",
+    "reset_now": "now",
+    "updated_at": "Updated {time}",
+    "not_updated": "Not updated yet"
+  },
+  "status": {
+    "loading": "Refreshing Codex usage…"
+  },
+  "settings": {
+    "show_five_hour_bar": {
+      "label": "Show 5-hour limit in bar",
+      "description": "Display the 5-hour percentage and tooltip row in the bar."
+    },
+    "show_five_hour_panel": {
+      "label": "Show 5-hour limit in panel",
+      "description": "Display the 5-hour usage card in the details panel."
+    }
+  },
+  "errors": {
+    "auth_missing": "Codex auth.json was not found. Run codex login first.",
+    "auth_invalid": "Codex auth.json is not valid JSON.",
+    "oauth_required": "Codex OAuth credentials are missing. Run codex login first.",
+    "unauthorized": "Codex credentials were rejected. Run codex login again.",
+    "network": "Could not reach the Codex usage service.",
+    "request_not_started": "Noctalia could not start the usage request.",
+    "http_status": "Codex usage request failed with HTTP {status}.",
+    "response_invalid": "Codex returned an invalid usage response.",
+    "no_windows": "Codex returned no usable quota windows."
+  }
+}
