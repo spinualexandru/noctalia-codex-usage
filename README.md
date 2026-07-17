@@ -60,3 +60,13 @@ remains visible and is marked stale.
 - **Credentials were rejected:** sign in again with `codex login`.
 - **Usage request failed:** check Noctalia's offline mode and your network connection. The previous successful values,
   if any, remain visible.
+
+## Development
+
+Install the repository's pre-commit hook with `pre-commit install`. It checks that every plugin manifest and standalone
+catalog row declares a positive integer `plugin_api`, rejects the removed `min_noctalia` field, and verifies that the
+catalog API level matches its child manifest. Run it manually with:
+
+```sh
+pre-commit run validate-noctalia-plugin-api --all-files
+```

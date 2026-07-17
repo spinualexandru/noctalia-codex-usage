@@ -1,0 +1,10 @@
+repos:
+  - repo: local
+    hooks:
+      - id: validate-noctalia-plugin-api
+        name: Validate Noctalia plugin_api metadata
+        entry: python3 scripts/validate_plugin_api.py
+        language: system
+        pass_filenames: false
+        verbose: true
+        files: '(^|/)plugin\.toml$|^catalog\.toml$|^scripts/validate_plugin_api\.py$|^\.pre-commit-config\.yaml$'
