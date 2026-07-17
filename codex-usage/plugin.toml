@@ -1,7 +1,7 @@
 id = "spinualexandru/codex-usage"
 name = "Codex Usage"
-version = "0.1.0"
-min_noctalia = "5.0.0"
+version = "0.1.1"
+plugin_api = 3
 author = "spinualexandru"
 license = "MIT"
 dependencies = []

@@ -2,6 +2,13 @@
 
 Track the percentage of your Codex quota consumed in the current 5-hour and weekly windows.
 
+## Plugin
+
+| Field | Value |
+| --- | --- |
+| ID | `spinualexandru/codex-usage` |
+| Entries | Bar widget: `usage`; panel: `details`; service: `poller` |
+
 ## Features
 
 - Compact percentage-only 5-hour and weekly usage values in the Noctalia bar, with an option to hide the 5-hour value.
@@ -20,6 +27,12 @@ Track the percentage of your Codex quota consumed in the current 5-hour and week
 
 2. Enable `spinualexandru/codex-usage` and add the **Codex Usage** widget to a bar.
 3. Click the widget to open the details panel. The bar values and progress bars show percentage consumed, not percentage remaining.
+
+You can also toggle the details panel directly:
+
+```sh
+noctalia msg panel-toggle spinualexandru/codex-usage:details
+```
 
 The plugin uses the active OAuth account from `$CODEX_HOME/auth.json`, or `~/.codex/auth.json` when `CODEX_HOME` is
 unset. If credentials expire or are rejected, run `codex login` again; this plugin deliberately does not refresh or
