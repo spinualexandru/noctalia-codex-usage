@@ -14,14 +14,14 @@ key = "show_five_hour_bar"
 type = "bool"
 label_key = "settings.show_five_hour_bar.label"
 description_key = "settings.show_five_hour_bar.description"
-default = true
+default = false
 
 [[setting]]
 key = "show_five_hour_panel"
 type = "bool"
 label_key = "settings.show_five_hour_panel.label"
 description_key = "settings.show_five_hour_panel.description"
-default = true
+default = false
 
 [[widget]]
 id = "usage"

@@ -10,7 +10,7 @@ end
 
 local function showFiveHour()
   local value = noctalia.getConfig("show_five_hour_bar")
-  return value == nil or value == true or value == "true"
+  return value == true or value == "true"
 end
 
 local function roundedPercent(window)

@@ -21,7 +21,7 @@ end
 
 local function configEnabled(key)
   local value = noctalia.getConfig(key)
-  return value == nil or value == true or value == "true"
+  return value == true or value == "true"
 end
 
 local function shouldTrackFiveHour()
