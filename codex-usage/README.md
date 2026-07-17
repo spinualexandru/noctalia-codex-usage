@@ -11,7 +11,7 @@ Track the percentage of your Codex quota consumed in the current 5-hour and week
 
 ## Features
 
-- Compact percentage-only weekly usage in the Noctalia bar, with an option to also show the 5-hour value.
+- Compact usage percentages prefixed by the OpenAI icon in the Noctalia bar, with an option to also show the 5-hour value.
 - An attached details panel with optional 5-hour usage, weekly progress, reset countdowns, the current plan, and the last successful refresh.
 - Automatic refresh when Noctalia starts and every five minutes afterward.
 - A manual refresh button in the details panel.

@@ -67,7 +67,7 @@ end
 
 local function render()
   local container = barWidget.isVertical() and ui.column or ui.row
-  local children = {}
+  local children = { ui.glyph({ name = "brand-openai" }) }
   if showFiveHour() then
     table.insert(children, percentage(snapshot.fiveHour))
   end
