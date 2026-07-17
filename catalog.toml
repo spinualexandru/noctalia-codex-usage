@@ -1,10 +1,13 @@
+# Standalone Noctalia plugin source catalog.
+# Generated from child plugin.toml manifests by sync_catalog.py.
+
 [[plugin]]
 id = "spinualexandru/codex-usage"
 name = "Codex Usage"
-version = "0.1.0"
+version = "0.1.2"
 author = "spinualexandru"
 license = "MIT"
 icon = "sparkles"
 description = "Track Codex 5-hour and weekly quota usage from the bar."
-min_noctalia = "5.0.0"
+plugin_api = 3
 tags = ["productivity", "utility"]
