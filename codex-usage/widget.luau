@@ -13,6 +13,16 @@ local function showFiveHour()
   return value == true or value == "true"
 end
 
+-- The bar's standard presentation settings ("Color" / "Icon Color") are seeded under
+-- these keys; an empty value means the user left them unset.
+local function configuredColor(key)
+  local value = noctalia.getConfig(key)
+  if type(value) == "string" and value ~= "" then
+    return value
+  end
+  return nil
+end
+
 local function roundedPercent(window)
   if type(window) ~= "table" or tonumber(window.usedPercent) == nil then
     return nil
@@ -60,14 +70,14 @@ end
 local function percentage(window)
   return ui.label({
     text = percentText(window),
-    color = accent(window),
+    color = configuredColor("color") or accent(window),
     fontWeight = "bold",
   })
 end
 
 local function render()
   local container = barWidget.isVertical() and ui.column or ui.row
-  local children = { ui.glyph({ name = "brand-openai" }) }
+  local children = { ui.glyph({ name = "brand-openai", color = configuredColor("icon_color") or configuredColor("color") }) }
   if showFiveHour() then
     table.insert(children, percentage(snapshot.fiveHour))
   end

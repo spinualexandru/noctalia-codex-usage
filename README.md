@@ -36,6 +36,9 @@ None.
 - **Show 5-hour limit in bar:** shows the 5-hour percentage and tooltip row. Disabled by default.
 - **Show 5-hour limit in panel:** shows the 5-hour card in the details panel. Disabled by default.
 
+The bar's standard **Color** and **Icon Color** widget settings (presentation group, visible with advanced settings
+enabled) tint the usage text and the OpenAI icon. When unset, the text uses usage-based accent colors.
+
 When both options are disabled (the default), the plugin stops retaining and publishing the 5-hour window. Codex supplies the
 5-hour and weekly windows through one usage endpoint, so the shared five-minute request continues to keep weekly usage
 current. The panel also provides a manual refresh.

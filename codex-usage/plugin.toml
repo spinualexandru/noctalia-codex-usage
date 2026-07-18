@@ -27,6 +27,27 @@ default = false
 id = "usage"
 entry = "widget.luau"
 
+  # The bar editor's standard presentation settings ("Color" / "Icon Color") store their
+  # values under these keys, but Noctalia only seeds declared settings into
+  # noctalia.getConfig and does not recolor render() trees itself. Declaring both keys
+  # lets the widget honor those controls; visible_when never matches, so the entries
+  # stay hidden and the host's own controls remain the only ones shown.
+  [[widget.setting]]
+  key = "color"
+  type = "color"
+  label_key = "settings.color.label"
+  description_key = "settings.color.description"
+  default = ""
+  visible_when = { key = "show_five_hour_bar", values = ["__hidden__"] }
+
+  [[widget.setting]]
+  key = "icon_color"
+  type = "color"
+  label_key = "settings.icon_color.label"
+  description_key = "settings.icon_color.description"
+  default = ""
+  visible_when = { key = "show_five_hour_bar", values = ["__hidden__"] }
+
 [[panel]]
 id = "details"
 entry = "panel.luau"
