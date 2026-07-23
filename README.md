@@ -1,5 +1,7 @@
 # token-top
 
+![token-top plugin thumbnail](token-top/thumbnail.webp)
+
 Track your Codex quota and session usage from the Noctalia bar.
 
 ![token-top preview](preview.png)
