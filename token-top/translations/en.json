@@ -5,7 +5,7 @@
     "five_hour": "5-hour limit",
     "weekly": "Weekly limit",
     "status": "Status",
-    "plan": "{plan} plan",
+    "plan": "{plan}",
     "unknown_plan": "Unknown",
     "unavailable": "Usage unavailable",
     "percent_used": "{percent}% used",

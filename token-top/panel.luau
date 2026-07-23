@@ -4,6 +4,26 @@ local STATE_KEY = "usage_snapshot"
 local REFRESH_REQUEST_KEY = "refresh_request"
 local snapshot = noctalia.state.get(STATE_KEY) or { status = "loading" }
 local opened = false
+local COMMERCIAL_PLAN_NAMES = {
+  free = "ChatGPT Free",
+  free_workspace = "ChatGPT Free",
+  guest = "ChatGPT Free",
+  go = "ChatGPT Go Subscription",
+  plus = "ChatGPT Plus Subscription",
+  prolite = "ChatGPT Pro 5x Subscription",
+  pro_lite = "ChatGPT Pro 5x Subscription",
+  pro = "ChatGPT Pro 20x Subscription",
+  team = "ChatGPT Business",
+  self_serve_business_usage_based = "ChatGPT Business",
+  business = "ChatGPT Enterprise",
+  enterprise_cbp_usage_based = "ChatGPT Enterprise",
+  enterprise = "ChatGPT Enterprise",
+  hc = "ChatGPT Enterprise",
+  education = "ChatGPT Edu",
+  edu = "ChatGPT Edu",
+  k12 = "ChatGPT Edu",
+  quorum = "ChatGPT Enterprise",
+}
 
 local function tr(key, substitutions)
   return noctalia.tr(key, substitutions)
@@ -56,8 +76,14 @@ local function planLabel(value)
   if type(value) ~= "string" or value == "" then
     return tr("labels.unknown_plan")
   end
-  local words = value:gsub("_", " ")
-  return words:sub(1, 1):upper() .. words:sub(2)
+
+  local normalized = value:lower():gsub("[%s%-]+", "_")
+  local commercialName = COMMERCIAL_PLAN_NAMES[normalized]
+  if commercialName ~= nil then
+    return commercialName
+  end
+
+  return value
 end
 
 local function windowCard(title, window)

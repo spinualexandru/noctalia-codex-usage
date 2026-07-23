@@ -4,7 +4,7 @@
 [[plugin]]
 id = "spinualexandru/token-top"
 name = "token-top"
-version = "0.2.0"
+version = "0.2.1"
 author = "spinualexandru"
 license = "MIT"
 icon = "sparkles"
