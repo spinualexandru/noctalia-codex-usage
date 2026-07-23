@@ -1,4 +1,4 @@
-# Codex Usage
+# token-top
 
 Track the percentage of your Codex quota consumed in the current 5-hour and weekly windows.
 
@@ -6,7 +6,7 @@ Track the percentage of your Codex quota consumed in the current 5-hour and week
 
 | Field | Value |
 | --- | --- |
-| ID | `spinualexandru/codex-usage` |
+| ID | `spinualexandru/token-top` |
 | Entries | Bar widget: `usage`; panel: `details`; service: `poller` |
 
 ## Features
@@ -25,13 +25,13 @@ Track the percentage of your Codex quota consumed in the current 5-hour and week
    codex login
    ```
 
-2. Enable `spinualexandru/codex-usage` and add the **Codex Usage** widget to a bar.
+2. Enable `spinualexandru/token-top` and add the **token-top** widget to a bar.
 3. Click the widget to open the details panel. The bar values and progress bars show percentage consumed, not percentage remaining.
 
 You can also toggle the details panel directly:
 
 ```sh
-noctalia msg panel-toggle spinualexandru/codex-usage:details
+noctalia msg panel-toggle spinualexandru/token-top:details
 ```
 
 The plugin uses the active OAuth account from `$CODEX_HOME/auth.json`, or `~/.codex/auth.json` when `CODEX_HOME` is

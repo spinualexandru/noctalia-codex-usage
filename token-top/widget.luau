@@ -1,7 +1,7 @@
 --!nonstrict
 
 local STATE_KEY = "usage_snapshot"
-local PANEL_ID = "spinualexandru/codex-usage:details"
+local PANEL_ID = "spinualexandru/token-top:details"
 local snapshot = noctalia.state.get(STATE_KEY) or { status = "loading" }
 
 local function tr(key, substitutions)

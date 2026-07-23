@@ -1,6 +1,6 @@
-# Codex Usage
+# token-top
 
-![alt text](codex-usage/thumbnail.webp)
+![token-top plugin thumbnail](token-top/thumbnail.webp)
 
 Track the percentage of your Codex quota consumed in the current 5-hour and weekly windows.
 
@@ -20,7 +20,7 @@ Track the percentage of your Codex quota consumed in the current 5-hour and week
    codex login
    ```
 
-2. Enable `spinualexandru/codex-usage` and add the **Codex Usage** widget to a bar.
+2. Enable `spinualexandru/token-top` and add the **token-top** widget to a bar.
 3. Click the widget to open the details panel. The bar values and progress bars show percentage consumed, not percentage remaining.
 
 The plugin uses the active OAuth account from `$CODEX_HOME/auth.json`, or `~/.codex/auth.json` when `CODEX_HOME` is

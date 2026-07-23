@@ -1,5 +1,5 @@
 {
-  "title": "Codex Usage",
+  "title": "token-top",
   "description": "Track Codex 5-hour and weekly quota usage from the bar.",
   "labels": {
     "five_hour": "5-hour limit",

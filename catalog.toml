@@ -2,9 +2,9 @@
 # Generated from child plugin.toml manifests by sync_catalog.py.
 
 [[plugin]]
-id = "spinualexandru/codex-usage"
-name = "Codex Usage"
-version = "0.1.2"
+id = "spinualexandru/token-top"
+name = "token-top"
+version = "0.2.0"
 author = "spinualexandru"
 license = "MIT"
 icon = "sparkles"
