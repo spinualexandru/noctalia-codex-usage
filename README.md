@@ -1,75 +1,12 @@
 # token-top
 
-![token-top plugin thumbnail](token-top/thumbnail.webp)
+Track your Codex quota and session usage from the Noctalia bar.
 
-Track the percentage of your Codex quota consumed in the current 5-hour and weekly windows.
+![token-top preview](preview.png)
 
-## Features
+## Get started
 
-- Compact usage percentages prefixed by the OpenAI icon in the Noctalia bar, with an option to also show the 5-hour value.
-- An attached details panel with optional 5-hour usage, weekly progress, reset countdowns, the current plan under its commercial name, and the last successful refresh.
-- Automatic refresh when Noctalia starts and every five minutes afterward.
-- A manual refresh button in the details panel.
-- Duration-based window detection, so weekly-only and reordered API responses are labelled correctly.
-
-## Usage
-
-1. Make sure you are logged into Codex
-
-   ```sh
-   codex login
-   ```
-
-2. Enable `spinualexandru/token-top` and add the **token-top** widget to a bar.
-3. Click the widget to open the details panel. The bar values and progress bars show percentage consumed, not percentage remaining.
-
-The plugin uses the active OAuth account from `$CODEX_HOME/auth.json`, or `~/.codex/auth.json` when `CODEX_HOME` is
-unset. If credentials expire or are rejected, run `codex login` again; this plugin deliberately does not refresh or
-rewrite credentials.
-
-## Dependencies
-
-None.
-
-## Settings
-
-- **Show 5-hour limit in bar:** shows the 5-hour percentage and tooltip row. Disabled by default.
-- **Show 5-hour limit in panel:** shows the 5-hour card in the details panel. Disabled by default.
-
-The bar's standard **Color** and **Icon Color** widget settings (presentation group, visible with advanced settings
-enabled) tint the usage text and the OpenAI icon. When unset, the text uses usage-based accent colors.
-
-When both options are disabled (the default), the plugin stops retaining and publishing the 5-hour window. Codex supplies the
-5-hour and weekly windows through one usage endpoint, so the shared five-minute request continues to keep weekly usage
-current. The panel also provides a manual refresh.
-
-## Side effects
-
-- **Filesystem reads:** reads the active Codex `auth.json` before each request.
-- **Network:** sends an authenticated `GET` request to `https://chatgpt.com/backend-api/wham/usage` to retrieve quota
-  percentages and reset times. Requests honor Noctalia's offline mode.
-- **Filesystem writes:** none.
-- **Spawned processes:** none.
-
-The access token is kept only inside the polling service while a request is made. It is never copied into Noctalia
-shared state, logs, tooltips, notifications, or screenshots. When a refresh fails, the last successful usage snapshot
-remains visible and is marked stale.
-
-## Troubleshooting
-
-- **`auth.json` was not found:** run `codex login`, then refresh from the panel.
-- **OAuth credentials are missing:** API-key-only Codex configuration cannot access ChatGPT subscription quotas; sign
-  in with `codex login`.
-- **Credentials were rejected:** sign in again with `codex login`.
-- **Usage request failed:** check Noctalia's offline mode and your network connection. The previous successful values,
-  if any, remain visible.
-
-## Development
-
-Install the repository's pre-commit hook with `pre-commit install`. It checks that every plugin manifest and standalone
-catalog row declares a positive integer `plugin_api`, rejects the removed `min_noctalia` field, and verifies that the
-catalog API level matches its child manifest. Run it manually with:
-
-```sh
-pre-commit run validate-noctalia-plugin-api --all-files
-```
+1. Install [ripgrep](https://github.com/BurntSushi/ripgrep) and sign in with `codex login`.
+2. In Noctalia > Plugins, add `https://github.com/spinualexandru/token-top-noctalia` as plugin source
+3. Enable `spinualexandru/token-top` in Noctalia and add the **token-top** widget to your bar.
+4. Click the widget to see your usage details.

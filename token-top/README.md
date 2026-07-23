@@ -1,6 +1,6 @@
 # token-top
 
-Track the percentage of your Codex quota consumed in the current 5-hour and weekly windows.
+Track Codex quota consumption and session token usage from the bar.
 
 ## Plugin
 
@@ -13,6 +13,8 @@ Track the percentage of your Codex quota consumed in the current 5-hour and week
 
 - Compact usage percentages prefixed by the OpenAI icon in the Noctalia bar, with an option to also show the 5-hour value.
 - An attached details panel with optional 5-hour usage, weekly progress, reset countdowns, the current plan under its commercial name, and the last successful refresh.
+- A compact stats ledger with today and current-window totals, a seven-day activity chart, input/output/cache and
+  reasoning breakdowns, request and turn counts, thread distribution, reset projection, and previous-window comparison.
 - Automatic refresh when Noctalia starts and every five minutes afterward.
 - A manual refresh button in the details panel.
 - Duration-based window detection, so weekly-only and reordered API responses are labelled correctly.
@@ -28,6 +30,11 @@ Track the percentage of your Codex quota consumed in the current 5-hour and week
 2. Enable `spinualexandru/token-top` and add the **token-top** widget to a bar.
 3. Click the widget to open the details panel. The bar values and progress bars show percentage consumed, not percentage remaining.
 
+The token statistics use cumulative usage snapshots from local Codex session rollouts. **Today** starts at local
+midnight. The activity chart divides the exact weekly limit window into seven 24-hour slices, while the reset projection
+extrapolates the current pace across that complete window. Cached input is a subset of input, and reasoning is a subset
+of output.
+
 You can also toggle the details panel directly:
 
 ```sh
@@ -40,7 +47,9 @@ rewrite credentials.
 
 ## Dependencies
 
-None. CodexBar, `curl`, and `jq` are not required.
+- `rg` (ripgrep), used to stream only token and turn records from Codex session JSONL without loading full transcripts.
+
+CodexBar, `curl`, and `jq` are not required.
 
 ## Settings
 
@@ -56,11 +65,13 @@ current. The panel also provides a manual refresh.
 
 ## Side effects
 
-- **Filesystem reads:** reads the active Codex `auth.json` before each request.
+- **Filesystem reads:** reads the active Codex `auth.json` before each request and incrementally scans
+  `$CODEX_HOME/sessions` (or `~/.codex/sessions`) for token usage records.
 - **Network:** sends an authenticated `GET` request to `https://chatgpt.com/backend-api/wham/usage` to retrieve quota
   percentages and reset times. Requests honor Noctalia's offline mode.
 - **Filesystem writes:** none.
-- **Spawned processes:** none.
+- **Spawned processes:** runs ripgrep during refreshes to stream structural `token_count` records and short
+  `turn_context` prefixes from relevant Codex session files.
 
 The access token is kept only inside the polling service while a request is made. It is never copied into Noctalia
 shared state, logs, tooltips, notifications, or screenshots. When a refresh fails, the last successful usage snapshot

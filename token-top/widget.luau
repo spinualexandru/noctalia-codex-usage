@@ -14,10 +14,10 @@ local function showFiveHour()
 end
 
 -- The bar's standard presentation settings ("Color" / "Icon Color") are seeded under
--- these keys; an empty value means the user left them unset.
+-- these keys; the hidden sentinel means the user left them unset.
 local function configuredColor(key)
   local value = noctalia.getConfig(key)
-  if type(value) == "string" and value ~= "" then
+  if type(value) == "string" and value ~= "" and value ~= "__unset__" then
     return value
   end
   return nil

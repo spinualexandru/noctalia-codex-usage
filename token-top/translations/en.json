@@ -1,6 +1,6 @@
 {
   "title": "token-top",
-  "description": "Track Codex 5-hour and weekly quota usage from the bar.",
+  "description": "Track Codex quota usage and session token statistics from the bar.",
   "labels": {
     "five_hour": "5-hour limit",
     "weekly": "Weekly limit",
@@ -18,6 +18,41 @@
   },
   "status": {
     "loading": "Refreshing Codex usage…"
+  },
+  "stats": {
+    "title": "Stats",
+    "since_reset": "Since limit reset",
+    "today": "Today",
+    "average_per_day": "Average per day",
+    "average_per_thread": "Average per thread",
+    "daily_activity": "Daily activity",
+    "current_window": "Current limit window",
+    "breakdown": "Input / Output / Cached",
+    "input": "Input",
+    "output": "Output",
+    "cached": "Cached",
+    "cached_share": "{percent}% of input cached",
+    "reasoning_share": "{value} reasoning · {percent}% of output",
+    "requests_turns": "Requests / turns",
+    "requests_turns_value": "{requests} / {turns}",
+    "average_median": "Average / median per thread",
+    "average_median_value": "{average} / {median}",
+    "largest_thread": "Largest thread",
+    "largest_thread_value": "{value} · {percent}% of total",
+    "projected_by_reset": "Projected by reset",
+    "daily_pace": "{value} tokens/day",
+    "higher_than_previous": "Pace {percent}% higher than previous window",
+    "lower_than_previous": "Pace {percent}% lower than previous window",
+    "same_as_previous": "Same pace as previous window",
+    "comparison_unavailable": "No previous-window comparison",
+    "tokens": "{value} tokens",
+    "loading": "Reading Codex sessions…",
+    "loading_progress": "Reading Codex sessions… {processed}/{total}",
+    "calculating": "Calculating stats…",
+    "unavailable": "Session token usage is unavailable.",
+    "one_thread": "1 thread",
+    "threads": "{count} threads",
+    "summary": "{threads} · weekly window started {date}"
   },
   "settings": {
     "show_five_hour_bar": {

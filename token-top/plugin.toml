@@ -1,13 +1,13 @@
 id = "spinualexandru/token-top"
 name = "token-top"
-version = "0.2.1"
+version = "0.3.1"
 plugin_api = 3
 author = "spinualexandru"
 license = "MIT"
-dependencies = []
+dependencies = ["rg"]
 tags = ["productivity", "utility"]
 icon = "sparkles"
-description = "Track Codex 5-hour and weekly quota usage from the bar."
+description = "Track Codex quota usage and session token statistics from the bar."
 
 [[setting]]
 key = "show_five_hour_bar"
@@ -37,7 +37,7 @@ entry = "widget.luau"
   type = "color"
   label_key = "settings.color.label"
   description_key = "settings.color.description"
-  default = ""
+  default = "__unset__"
   visible_when = { key = "show_five_hour_bar", values = ["__hidden__"] }
 
   [[widget.setting]]
@@ -45,14 +45,14 @@ entry = "widget.luau"
   type = "color"
   label_key = "settings.icon_color.label"
   description_key = "settings.icon_color.description"
-  default = ""
+  default = "__unset__"
   visible_when = { key = "show_five_hour_bar", values = ["__hidden__"] }
 
 [[panel]]
 id = "details"
 entry = "panel.luau"
 width = 420
-height = 360
+height = 560
 placement = "attached"
 position = "auto"
 
